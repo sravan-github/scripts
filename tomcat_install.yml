@@ -1,0 +1,23 @@
+---
+- name: tomcat install
+  hosts: localhost
+  become: true
+
+  tasks:
+  - name: Install OpenJDK
+    apt:
+      name: openjdk-11-jre-headless
+
+  - name: download tomcat server packages
+    get_url:
+      url: https://mirrors.estointernet.in/apache/tomcat/tomcat-8/v8.5.69/bin/apache-tomcat-8.5.69.tar.gz
+      dest: /opt
+      
+  - name: extract tomcat packages
+    unarchive:
+      src: /opt/apache-tomcat-8.5.69.tar.gz
+      dest: /opt
+      remote_src: yes
+
+  - name: start tomcat services
+    shell: nohup /opt/apache-tomcat-8.5.69/bin/startup.sh

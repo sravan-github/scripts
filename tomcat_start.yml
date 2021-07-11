@@ -1,0 +1,8 @@
+---
+- name: tomcat start
+  hosts: localhost
+  become: true
+
+  tasks:
+  - name: start tomcat services
+    shell: nohup /opt/apache-tomcat-8.5.69/bin/startup.sh

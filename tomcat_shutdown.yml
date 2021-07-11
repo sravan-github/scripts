@@ -1,0 +1,8 @@
+---
+- name: tomcat stop
+  hosts: localhost
+  become: true
+
+  tasks:
+  - name: stop tomcat services
+    shell: nohup /opt/apache-tomcat-8.5.69/bin/shutdown.sh
