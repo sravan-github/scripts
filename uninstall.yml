@@ -1,0 +1,12 @@
+---
+- hosts: "{{ hostname }}"
+  become: yes
+  gather_facts: False
+  vars:
+    - packages: ["git", "nmap"]
+  tasks:
+    - name: UnInstalling {{ packages }} on {{ hostname }}
+      apt:
+        name: "{{ item }}"
+        state: absent
+      with_items: "{{ packages }}"

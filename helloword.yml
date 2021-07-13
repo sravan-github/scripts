@@ -1,0 +1,9 @@
+---
+# ./hello_world.yml
+
+- name: print greeting
+  hosts: localhost
+  tasks:
+    - include_vars: name_vars.yml
+
+    - debug: msg="Hello, {{ name }}!"

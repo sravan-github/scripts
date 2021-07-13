@@ -1,0 +1,14 @@
+---
+- hosts: "{{ hostname }}"
+  become: yes
+  gather_facts: False
+  vars:
+    - packages: ["git", "nmap"]
+  tasks:
+    - name: Installing {{ packages }} on {{ hostname }}
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ packages }}"
+      
+#ansible-playbook install.yml --extra-var="hostname=localhost"
