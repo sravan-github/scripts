@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Pull RabitMQ Image
+    docker_image:
+       name: rabbitmq
+       source: pull
