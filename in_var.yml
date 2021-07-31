@@ -1,0 +1,6 @@
+---
+packages: 
+  - wget
+  - net-tools
+  - git
+  - maven
