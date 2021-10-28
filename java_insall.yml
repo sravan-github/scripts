@@ -1,0 +1,9 @@
+---
+- name: tomcat install
+  hosts: localhost
+  become: true
+
+  tasks:
+  - name: Install OpenJDK
+    apt:
+      name: openjdk-11-jdk
