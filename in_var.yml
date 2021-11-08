@@ -4,3 +4,4 @@ packages:
   - net-tools
   - git
   - maven
+  - openjdk-11-jdk
