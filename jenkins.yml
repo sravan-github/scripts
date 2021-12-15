@@ -2,6 +2,10 @@
  - hosts: localhost
    become: yes
    tasks:
+    - name: Install OpenJDK
+      apt:
+        name: openjdk-11-jdk
+        
     - name: ensure the jenkins apt repository key is installed
       apt_key: url=https://pkg.jenkins.io/debian-stable/jenkins.io.key state=present
       become: yes
