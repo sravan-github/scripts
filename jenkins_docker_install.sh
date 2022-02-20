@@ -4,3 +4,4 @@ cd scripts
 sh ansible_install.sh
 ansible-playbook jenkins.yml
 ansible-playbook docker_install.yml
+sudo chmod 777 /var/run/docker.sock
