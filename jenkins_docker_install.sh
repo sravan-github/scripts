@@ -1,0 +1,6 @@
+#!/bin/bash
+git clone https://github.com/sravan-github/scripts.git
+cd scripts
+sh ansible_install.sh
+ansible-playbook jenkins.yml
+ansible-playbook docker_install.yml
